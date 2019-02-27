@@ -88,10 +88,7 @@ foreach my $genome (@files)
  {!system("$gbk2seq $outgbk $replicon FAA > $outfaa") or die "$gbk2seq run with error";}
  if(-s $outfaa)
  {
-  !system("$hmmsearch -o $outhmm $query $outfaa") or die "$hmmsearch run with error";
-#  !system("$hs2tab $outhmm > $outtxt") or die "$hs2tab run with error";
-#  my ($hits)=`grep -vc 'no hits above thresholds' $outtxt`;
-#  if($hits > 1) #valid hmm hits exist
+  !system("$hmmsearch -E 1e-5 -o $outhmm $query $outfaa") or die "$hmmsearch run with error";
   system("$hs2tab $outhmm | $filter - > $outtxt"); #without check since it can be empty
   if(-s $outtxt) #not empty
   {push @allout, $outtxt;}

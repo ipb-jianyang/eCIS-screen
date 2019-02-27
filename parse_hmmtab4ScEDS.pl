@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# parse the output from hmmsearch2tab.pl for AFP system (for project with YangGW)
+# parse the output from hmmsearch2tab.pl for ScEDS
 #by Jester, 2017/12/28
 # revised to use essential & core components for inclusion cutoff, Jester 2018/2/24
 
@@ -8,7 +8,7 @@ my $dis_cutoff=30000; #arbitrary setting for AFP system size
 my $essential='afp11';
 #my @core=qw/afp1_5 afp2_3_4 afp8 afp9 afp15/;
 my @core=qw/afp1_5/; #revised to use afp11 and afp1_5 only, Jester 2018/6/9
-my $num_genes=@core/2; #lower limit for number of core genes in the AFP system
+my $num_genes=1; #lower limit for number of core genes in the AFP system
 
 @ARGV>0 or die "Usage: $0 <hmmsearch2tab.pl ouput1> [output2] ...\n\tDistance cutoff: $dis_cutoff\n\tGene number cutoff: $num_genes\n";
 

@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# filter the output from hmmsearch2tab.pl to keep only best hit for each gene (for project with YangGW)
+# filter the output from hmmsearch2tab.pl to keep only best hit for each gene (for ScEDS project)
 #by Jester, 2018/2/26
 
 use strict;
