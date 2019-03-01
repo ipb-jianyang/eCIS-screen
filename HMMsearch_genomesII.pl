@@ -6,8 +6,8 @@
 use strict;
 
 #settings:
-my $hmmsearch='/public/Software/hmmer3/bin/hmmsearch'; #the program from HMMER3 package
-my $script_path='/home/yangj/Work/pvc_YangGW/source_code4gitHub'; #location of all ScEDS screen scripts
+my $hmmsearch='/usr/local/bin/hmmsearch'; #the program from HMMER3 package
+my $script_path='/your_path/ScEDS-screen'; #location of all ScEDS screen scripts
 
 my $gbk2IDs=$script_path.'/gbk2IDs.pl';
 my $gbk2seq=$script_path.'/gbk2seq.pl';
