@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #run hmmsearch of given HMM file against ALL local bacterial genomes
-#desigend for ScEDS analysis, jester, 2018/1/10
+#desigend for eCIS analysis, jester, 2018/1/10
 #revised to use newly downloaded GenBank complete genome data, jester, 2018/6/14
 
 use strict;
@@ -13,7 +13,7 @@ my $gbk2IDs=$script_path.'/gbk2IDs.pl';
 my $gbk2seq=$script_path.'/gbk2seq.pl';
 my $hs2tab=$script_path.'/hmmsearch2tab.pl';
 my $filter=$script_path.'/filter_hmmtab.pl';
-my $summary=$script_path.'/parse_hmmtab4ScEDS.pl';
+my $summary=$script_path.'/parse_hmmtab4eCIS.pl';
 
 -x $gbk2IDs and -x $gbk2seq and -x $hmmsearch and -x $hs2tab and -x $filter and -x $summary or die "error run $gbk2seq or $hs2tab or $filter or $hmmsearch";
 
