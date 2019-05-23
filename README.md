@@ -1,4 +1,4 @@
-# Reedme for eCIS-screen
+# Readme for eCIS-screen
 This repository contains the code used for screening putative extracellular Contractile Injection System (eCIS) loci from genomic sequences.
 
 ## Note
