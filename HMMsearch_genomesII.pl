@@ -7,7 +7,7 @@ use strict;
 
 #settings:
 my $hmmsearch='/usr/local/bin/hmmsearch'; #the program from HMMER3 package
-my $script_path='/your_path/ScEDS-screen'; #location of all ScEDS screen scripts
+my $script_path='/your_path/eCIS-screen'; #location of all eCIS screen scripts
 
 my $gbk2IDs=$script_path.'/gbk2IDs.pl';
 my $gbk2seq=$script_path.'/gbk2seq.pl';
@@ -18,13 +18,13 @@ my $summary=$script_path.'/parse_hmmtab4eCIS.pl';
 -x $gbk2IDs and -x $gbk2seq and -x $hmmsearch and -x $hs2tab and -x $filter and -x $summary or die "error run $gbk2seq or $hs2tab or $filter or $hmmsearch";
 
 @ARGV==3 or die <<EOF;
-	<-- Pipeline for screening ScEDS loci from bacterial genomes -->
-	<--  By Jian YANG, Institute of Pathogen Biology, CAMS&PUMC  -->
-	<--  Available https://github.com/ipb-jianyang/ScEDS-screen  -->
+	<-- Pipeline for screening eCIS loci from bacterial genomes -->
+	<--  By Jian YANG, Institute of Pathogen Biology, CAMS&PUMC -->
+	<--  Available https://github.com/ipb-jianyang/eCIS-screen  -->
 
 Usage: $0 <query HMM profile> <path to genomes for screen> <output summary file>
 
-[NOTE] 1. The HMM profile file contains multiple HMMs for all components of ScEDSs.
+[NOTE] 1. The HMM profile file contains multiple HMMs for all components of eCISs.
        2. The path to genomes is expected to contain sub-directories for each genome,
           which should contain the GenBank format file named as *_genomic.gbff.gz.
           An example of the sub-directory within the path is available from:
@@ -35,7 +35,7 @@ Usage: $0 <query HMM profile> <path to genomes for screen> <output summary file>
           are generally meaningless to users. The suggest way to run the pipeline is:
           # mkdir screen_output
           # cd screen_output
-          # /path/HMMsearch_genomesII.pl /path/ScEDS.hmm genome_path ../screen_summary.txt
+          # /path/HMMsearch_genomesII.pl /path/eCIS.hmm genome_path ../screen_summary.txt
        4. The pipeline may run for a few hours or days depends on the number of genomes
           for screening. The progress message will be printed to the screen by default.
        5. The output is in Tab-delimited text format, view in in Excel for easy read.
