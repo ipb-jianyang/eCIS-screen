@@ -12,6 +12,7 @@ my $type = shift || die $usage;
 $type = uc $type;
 die $usage unless($type eq 'FFN' or $type eq 'FAA' or $type eq 'PG');
 my $simple=0;
+my $defaulID='CDS00000';
 if(@ARGV)
 {
 	$simple=shift;
@@ -69,6 +70,8 @@ while( $acc and my $seq = $in->next_seq ) {
 			{
 			 if($cds->has_tag('protein_id'))
 			 {($id)=$cds->get_tag_values('protein_id'); }
+			 else #use defaulID for genome without internal ID of each gene, by Jester 2024/2/19
+			 {$id=++$defaulID;}
 			}
 		}
 		die "Fatal error: no ID found" unless $id;
